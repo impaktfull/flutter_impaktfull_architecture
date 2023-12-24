@@ -1,7 +1,17 @@
 library impaktfull_architecture;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+// 3rd party packages
+export 'package:connectivity_plus/connectivity_plus.dart';
+export 'package:device_info_plus/device_info_plus.dart';
+export 'package:dio/dio.dart';
+export 'package:get_it/get_it.dart';
+export 'package:injectable/injectable.dart' hide test;
+export 'package:flutter_secure_storage/flutter_secure_storage.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:provider/provider.dart';
+export 'package:shared_preferences/shared_preferences.dart';
+export 'package:sprintf/sprintf.dart';
+export 'package:synchronized/synchronized.dart';
+export 'package:tuple/tuple.dart';
+export 'package:url_launcher/url_launcher.dart';
+export 'package:url_launcher/url_launcher_string.dart';
