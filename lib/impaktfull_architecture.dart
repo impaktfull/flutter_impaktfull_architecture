@@ -1,6 +1,7 @@
 library impaktfull_architecture;
 
 export 'src/util/connectivity/connectivity.dart';
+export 'src/provider/change_notifier_ex.dart';
 
 // 3rd party packages
 export 'package:connectivity_plus/connectivity_plus.dart';
