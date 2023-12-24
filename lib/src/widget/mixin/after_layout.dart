@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-/// 
+///
 mixin AfterLayout<T extends StatefulWidget> on State<T> {
   @override
   void initState() {
