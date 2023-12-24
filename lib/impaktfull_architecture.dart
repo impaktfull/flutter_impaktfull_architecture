@@ -1,5 +1,7 @@
 library impaktfull_architecture;
 
+export 'src/util/connectivity/connectivity.dart';
+
 // 3rd party packages
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:device_info_plus/device_info_plus.dart';
