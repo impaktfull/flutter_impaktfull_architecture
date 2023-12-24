@@ -1,5 +1,6 @@
 library impaktfull_architecture;
 
+export 'src/di/di.dart';
 export 'src/util/connectivity/connectivity.dart';
 export 'src/provider/change_notifier_ex.dart';
 export 'src/widget/lifecycle/lifecycle_widget.dart';
