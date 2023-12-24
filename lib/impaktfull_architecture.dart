@@ -3,6 +3,7 @@ library impaktfull_architecture;
 export 'src/util/connectivity/connectivity.dart';
 export 'src/provider/change_notifier_ex.dart';
 export 'src/widget/lifecycle/lifecycle_widget.dart';
+export 'src/widget/mixin/after_layout.dart';
 
 // 3rd party packages
 export 'package:connectivity_plus/connectivity_plus.dart';
