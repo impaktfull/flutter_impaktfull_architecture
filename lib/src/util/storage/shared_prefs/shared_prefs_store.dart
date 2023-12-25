@@ -4,8 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract class SharedPrefsStore implements KeyValueStore {
   factory SharedPrefsStore(
     SharedPreferences preferences,
-  ) =>
-      _SharedPreferenceStorage(preferences);
+  ) = _SharedPreferenceStorage;
 
   Future<void> reload();
 }
