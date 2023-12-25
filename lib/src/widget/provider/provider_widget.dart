@@ -17,9 +17,9 @@ class ProviderWidget<T extends ChangeNotifier, Theme, Localization>
   final T Function() create;
 
   const ProviderWidget({
-    required this.builder,
-    required this.builderWithThemeAndLocalizations,
     required this.create,
+    this.builder,
+    this.builderWithThemeAndLocalizations,
     super.key,
   });
 
