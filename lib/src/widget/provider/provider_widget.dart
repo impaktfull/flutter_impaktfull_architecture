@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impaktfull_architecture/src/widget/theme/theme_localizer.dart';
 import 'package:provider/provider.dart';
 
-class ProviderWidget<T extends ChangeNotifier, Theme, Localization>
+class BaseProviderWidget<T extends ChangeNotifier, Theme, Localization>
     extends StatelessWidget {
   final Widget Function(
     BuildContext context,
@@ -16,7 +16,7 @@ class ProviderWidget<T extends ChangeNotifier, Theme, Localization>
   )? builderWithThemeAndLocalizations;
   final T Function() create;
 
-  const ProviderWidget({
+  const BaseProviderWidget({
     required this.create,
     this.builder,
     this.builderWithThemeAndLocalizations,
