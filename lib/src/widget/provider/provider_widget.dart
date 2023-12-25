@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:impaktfull_architecture/src/widget/theme/theme_localizer.dart';
 import 'package:provider/provider.dart';
 
-class ProviderWidget<T extends ChangeNotifier> extends StatelessWidget {
-  final Widget Function(BuildContext context, T viewModel) builder;
+class ProviderWidget<T extends ChangeNotifier, Theme, Localization>
+    extends StatelessWidget {
+  final Widget Function(
+    BuildContext context,
+    T viewModel,
+  )? builder;
+  final Widget Function(
+    BuildContext context,
+    T viewModel,
+    Theme theme,
+    Localization localization,
+  )? builderWithThemeAndLocalizations;
   final T Function() create;
 
   const ProviderWidget({
     required this.builder,
+    required this.builderWithThemeAndLocalizations,
     required this.create,
     super.key,
   });
@@ -16,7 +28,23 @@ class ProviderWidget<T extends ChangeNotifier> extends StatelessWidget {
     return ChangeNotifierProvider<T>(
       create: (context) => create(),
       child: Consumer<T>(
-        builder: (context, value, child) => builder(context, value),
+        builder: (context, viewModel, child) {
+          if (builder != null) {
+            return builder!.call(
+              context,
+              viewModel,
+            );
+          } else if (builderWithThemeAndLocalizations != null) {
+            return builderWithThemeAndLocalizations!(
+              context,
+              viewModel,
+              themeLookup(context),
+              localizationLookup(context),
+            );
+          }
+          throw ArgumentError(
+              'builder and builderWithThemeAndLocalizations are null');
+        },
       ),
     );
   }
