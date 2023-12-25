@@ -1,8 +1,8 @@
 import 'package:impaktfull_architecture/src/util/storage/key_value/key_value_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class SharedPreferenceStorage implements KeyValueStore {
-  factory SharedPreferenceStorage(
+abstract class SharedPrefsStore implements KeyValueStore {
+  factory SharedPrefsStore(
     SharedPreferences preferences,
   ) =>
       _SharedPreferenceStorage(preferences);
@@ -10,7 +10,7 @@ abstract class SharedPreferenceStorage implements KeyValueStore {
   Future<void> reload();
 }
 
-class _SharedPreferenceStorage implements SharedPreferenceStorage {
+class _SharedPreferenceStorage implements SharedPrefsStore {
   final SharedPreferences _sharedPreferences;
 
   _SharedPreferenceStorage(
