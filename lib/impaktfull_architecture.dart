@@ -2,6 +2,9 @@ library impaktfull_architecture;
 
 export 'src/di/di.dart';
 export 'src/util/connectivity/connectivity.dart';
+export 'src/util/storage/key_value/key_value_store.dart';
+export 'src/util/storage/secure/secure_store.dart';
+export 'src/util/storage/shared_prefs/shared_prefs_store.dart';
 export 'src/provider/change_notifier_ex.dart';
 export 'src/widget/lifecycle/lifecycle_widget.dart';
 export 'src/widget/mixin/after_layout.dart';
