@@ -9,6 +9,7 @@ export 'src/provider/change_notifier_ex.dart';
 export 'src/widget/lifecycle/lifecycle_widget.dart';
 export 'src/widget/mixin/after_layout.dart';
 export 'src/widget/provider/provider_widget.dart';
+export 'src/widget/theme/theme_localizer.dart';
 
 // 3rd party packages
 export 'package:connectivity_plus/connectivity_plus.dart';
