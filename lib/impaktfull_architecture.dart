@@ -1,6 +1,7 @@
 library impaktfull_architecture;
 
 export 'src/di/di.dart';
+export 'src/navigator/page_route/fade_in_page_route.dart';
 export 'src/util/connectivity/connectivity.dart';
 export 'src/util/storage/key_value/key_value_store.dart';
 export 'src/util/storage/secure/secure_store.dart';
