@@ -3,24 +3,28 @@ import 'package:flutter/services.dart';
 
 class StatusBar extends StatelessWidget {
   final Widget child;
-  final bool light;
+  final bool dark;
 
-  const StatusBar({
+  const StatusBar.dark({
     required this.child,
-    this.light = true,
     super.key,
-  });
+  }) : dark = true;
+
+  const StatusBar.light({
+    required this.child,
+    super.key,
+  }) : dark = false;
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        systemNavigationBarColor: light ? Colors.white : Colors.black,
-        statusBarBrightness: light ? Brightness.light : Brightness.dark,
-        statusBarIconBrightness: light ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor: dark ? Colors.white : Colors.black,
+        statusBarBrightness: dark ? Brightness.light : Brightness.dark,
+        statusBarIconBrightness: dark ? Brightness.dark : Brightness.light,
         systemNavigationBarIconBrightness:
-            light ? Brightness.dark : Brightness.light,
+            dark ? Brightness.dark : Brightness.light,
       ),
       child: child,
     );
