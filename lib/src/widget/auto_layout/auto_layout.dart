@@ -52,17 +52,23 @@ class AutoLayout extends StatelessWidget {
       }
     }
 
+    final Widget child;
     if (orientation == AutoLayoutOrientation.horizontal) {
-      return Row(
+      child = Row(
+        mainAxisAlignment: mainAxisAlignment,
+        crossAxisAlignment: crossAxisAlignment,
+        children: childerenWithSpacing,
+      );
+    } else {
+      child = Column(
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,
         children: childerenWithSpacing,
       );
     }
-    return Column(
-      mainAxisAlignment: mainAxisAlignment,
-      crossAxisAlignment: crossAxisAlignment,
-      children: childerenWithSpacing,
+    return Padding(
+      padding: padding,
+      child: child,
     );
   }
 }
