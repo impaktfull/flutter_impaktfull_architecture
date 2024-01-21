@@ -13,6 +13,7 @@ class AutoLayout extends StatelessWidget {
   final List<Widget> children;
   final EdgeInsets padding;
   final int spacing;
+  final Color backgroundColor;
 
   const AutoLayout({
     required this.children,
@@ -21,6 +22,7 @@ class AutoLayout extends StatelessWidget {
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.padding = EdgeInsets.zero,
     this.spacing = 0,
+    this.backgroundColor = Colors.transparent,
     super.key,
   });
 
@@ -30,6 +32,7 @@ class AutoLayout extends StatelessWidget {
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.padding = EdgeInsets.zero,
     this.spacing = 0,
+    this.backgroundColor = Colors.transparent,
     super.key,
   }) : orientation = AutoLayoutOrientation.horizontal;
 
@@ -39,6 +42,7 @@ class AutoLayout extends StatelessWidget {
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.padding = EdgeInsets.zero,
     this.spacing = 0,
+    this.backgroundColor = Colors.transparent,
     super.key,
   }) : orientation = AutoLayoutOrientation.vertical;
 
@@ -66,8 +70,9 @@ class AutoLayout extends StatelessWidget {
         children: childerenWithSpacing,
       );
     }
-    return Padding(
+    return Container(
       padding: padding,
+      color: backgroundColor,
       child: child,
     );
   }
