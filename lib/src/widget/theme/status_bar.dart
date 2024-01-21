@@ -15,6 +15,12 @@ class StatusBar extends StatelessWidget {
     super.key,
   }) : dark = false;
 
+  const StatusBar.custom({
+    required this.child,
+    required this.dark,
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
