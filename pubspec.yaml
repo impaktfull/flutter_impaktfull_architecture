@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^5.4.0
+  gap: ^3.0.1
   get_it: ^7.6.4
   injectable: ^2.3.2
   flutter_secure_storage: ^9.0.0
