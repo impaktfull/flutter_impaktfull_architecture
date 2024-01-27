@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InteractionFeedback extends StatelessWidget {
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Widget child;
 
   const InteractionFeedback({
@@ -12,6 +12,7 @@ class InteractionFeedback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (onTap == null) return child;
     return GestureDetector(
       onTap: onTap,
       child: child,
