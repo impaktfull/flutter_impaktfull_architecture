@@ -1,6 +1,7 @@
 library impaktfull_architecture;
 
 export 'src/di/di.dart';
+export 'src/extension/iterable_extension.dart';
 export 'src/extension/list_extension.dart';
 export 'src/navigator/page_route/fade_in_page_route.dart';
 export 'src/util/connectivity/connectivity.dart';

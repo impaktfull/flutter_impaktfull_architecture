@@ -25,8 +25,10 @@ class StatusBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: isDark
-          ? SystemUiOverlayStyle.light.copyWith(systemNavigationBarColor: Colors.transparent)
-          : SystemUiOverlayStyle.dark.copyWith(systemNavigationBarColor: Colors.transparent),
+          ? SystemUiOverlayStyle.light
+              .copyWith(systemNavigationBarColor: Colors.transparent)
+          : SystemUiOverlayStyle.dark
+              .copyWith(systemNavigationBarColor: Colors.transparent),
       child: child,
     );
   }
