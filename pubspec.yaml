@@ -21,7 +21,7 @@ dependencies:
   path: ^1.8.3
   provider: ^6.1.1
   shared_preferences: ^2.2.2
-  snacky: ^0.0.1
+  snacky: ^0.0.2
   sprintf: ^7.0.0
   synchronized: ^3.1.0+1
   tuple: ^2.0.2
