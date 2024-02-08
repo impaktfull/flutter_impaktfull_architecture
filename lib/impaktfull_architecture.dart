@@ -28,6 +28,7 @@ export 'package:flutter_secure_storage/flutter_secure_storage.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:path/path.dart';
 export 'package:provider/provider.dart';
+export 'package:snacky/snacky.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:sprintf/sprintf.dart';
 export 'package:synchronized/synchronized.dart';
