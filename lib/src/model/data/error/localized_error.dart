@@ -1,10 +1,12 @@
-abstract class LocalizedError extends Error {
+abstract class BaseLocalizedError<Localization> extends Error {
   String get errorLocalizationKey;
 
-  LocalizedError();
+  BaseLocalizedError();
+
+  String? getTranslatedError(Localization localization) => null;
 }
 
-class SimpleLoclizedError extends LocalizedError {
+class SimpleLoclizedError extends BaseLocalizedError<void> {
   final String errorKey;
 
   SimpleLoclizedError(this.errorKey);
