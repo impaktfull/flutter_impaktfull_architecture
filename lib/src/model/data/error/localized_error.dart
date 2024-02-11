@@ -1,11 +1,11 @@
-mixin BaseLocalizedError<Localization> {
+mixin BaseLocalizedModel<Localization> {
   String get errorLocalizationKey;
 
   String? getTranslatedError(Localization localization);
 }
 
-abstract class LocalizedError<Localization> extends Error
-    implements BaseLocalizedError<Localization> {
+abstract class BaseLocalizedError<Localization> extends Error
+    implements BaseLocalizedModel<Localization> {
   @override
   String? getTranslatedError(void localization) => null;
 }
