@@ -1,3 +1,9 @@
+# 0.0.3
+
+# Feat
+
+- SimpleLocalizedError
+
 # 0.0.2
 
 # Feat
