@@ -4,8 +4,7 @@ mixin BaseLocalizedModel<Localization> {
   String? getTranslatedError(Localization localization);
 }
 
-abstract class BaseLocalizedError<Localization> extends Error
-    implements BaseLocalizedModel<Localization> {
+abstract class BaseLocalizedError<Localization> extends Error implements BaseLocalizedModel<Localization> {
   @override
   String? getTranslatedError(Localization localization) => null;
 }
@@ -19,4 +18,7 @@ class SimpleLocalizedError extends Error implements BaseLocalizedError<void> {
 
   @override
   String? getTranslatedError(void localization) => message;
+
+  @override
+  String toString() => 'SimpleLocalizedError: `$message`';
 }
