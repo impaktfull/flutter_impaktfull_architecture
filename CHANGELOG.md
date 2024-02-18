@@ -1,3 +1,9 @@
-## 0.0.1
+# 0.0.2
 
-* TODO: Describe initial release.
+# Feat
+
+- Added GitHub Actions for CI/CD
+
+# 0.0.1
+
+- Initial release

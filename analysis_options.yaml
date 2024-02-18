@@ -9,4 +9,4 @@ analyzer:
 
 linter:
   rules:
-    - unawaited_futures       
+    - unawaited_futures
