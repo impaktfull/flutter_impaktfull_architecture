@@ -1,3 +1,13 @@
+# 0.0.7
+
+## Fix
+
+- Text style medium instead of w600
+
+## Removed
+
+- StatusBar because it is added in `impaktfull_ui`
+
 # 0.0.6
 
 ## Fix

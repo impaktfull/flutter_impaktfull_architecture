@@ -15,7 +15,6 @@ export 'src/widget/lifecycle/lifecycle_widget.dart';
 export 'src/widget/mixin/after_layout.dart';
 export 'src/widget/provider/provider_widget.dart';
 export 'src/widget/theme/theme_localizer.dart';
-export 'src/widget/theme/status_bar.dart';
 
 // 3rd party packages
 export 'package:connectivity_plus/connectivity_plus.dart';
