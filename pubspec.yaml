@@ -13,11 +13,14 @@ dependencies:
   dio: ^5.4.0
   gap: ^3.0.1
   get_it: ^7.6.4
+  impaktfull_ui: ^0.0.19
   injectable: ^2.3.2
   flutter_secure_storage: ^9.0.0
   flutter_svg: ^2.0.9
   path: ^1.8.3
   provider: ^6.1.1
+  package_info_plus: ^5.0.1
+  path_provider: ^2.1.2
   shared_preferences: ^2.2.2
   snacky: ^0.0.5
   sprintf: ^7.0.0

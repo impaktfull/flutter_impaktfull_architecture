@@ -1,3 +1,9 @@
+# 0.0.5
+
+## Fix
+
+- Added `impaktfull_ui` as a dependency
+
 # 0.0.4
 
 ## Fix
