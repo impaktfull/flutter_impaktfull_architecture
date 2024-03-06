@@ -7,26 +7,27 @@ environment:
   flutter: ">=1.17.0"
 dependencies:
   connectivity_plus: ^5.0.2
-  device_info_plus: ^9.1.1
+  device_info_plus: ^9.1.2
   flutter:
     sdk: flutter
-  dio: ^5.4.0
+  dio: ^5.4.1
   gap: ^3.0.1
-  get_it: ^7.6.4
-  impaktfull_ui: ^0.0.19
+  get_it: ^7.6.7
+  impaktfull_ui: ^0.0.31
   injectable: ^2.3.2
+  intl: ^0.18.1
   flutter_secure_storage: ^9.0.0
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
   path: ^1.8.3
-  provider: ^6.1.1
+  provider: ^6.1.2
   package_info_plus: ^5.0.1
   path_provider: ^2.1.2
   shared_preferences: ^2.2.2
-  snacky: ^0.0.5
+  snacky: ^0.0.14
   sprintf: ^7.0.0
   synchronized: ^3.1.0+1
   tuple: ^2.0.2
-  url_launcher: ^6.2.2
+  url_launcher: ^6.2.5
 dev_dependencies:
   flutter_test:
     sdk: flutter

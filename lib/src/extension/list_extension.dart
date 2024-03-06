@@ -16,6 +16,7 @@ extension ListExtension<T> on List<T> {
     Comparable<R>? Function(T item) by,
     Comparable<V>? Function(T item) by2, {
     bool ascending = true,
+    bool ascending2 = true,
   }) {
     sort((a, b) {
       final byA = by(a);
@@ -30,9 +31,9 @@ extension ListExtension<T> on List<T> {
       final byA2 = by2(a);
       final byB2 = by2(b);
       if (byA2 == null && byB2 == null) return 0;
-      if (byA2 == null) return ascending ? -1 : 1;
-      if (byB2 == null) return ascending ? 1 : -1;
-      return _compareValues(byA2, byB2, ascending);
+      if (byA2 == null) return ascending2 ? -1 : 1;
+      if (byB2 == null) return ascending2 ? 1 : -1;
+      return _compareValues(byA2, byB2, ascending2);
     });
   }
 }
