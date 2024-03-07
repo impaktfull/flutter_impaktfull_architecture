@@ -7,14 +7,14 @@ late Localization Function<Localization>(BuildContext context)
 class ThemeLocalizer<Theme, Localization> extends StatelessWidget {
   final Widget Function(BuildContext context, Theme theme)? builderTheme;
   final Widget Function(BuildContext context, Localization localization)?
-      builderLocalizations;
+      builderLocalization;
   final Widget Function(
       BuildContext context, Theme theme, Localization localization)? builder;
 
   const ThemeLocalizer({
     this.builder,
     this.builderTheme,
-    this.builderLocalizations,
+    this.builderLocalization,
     super.key,
   });
 
@@ -25,8 +25,8 @@ class ThemeLocalizer<Theme, Localization> extends StatelessWidget {
           context, themeLookup(context), localizationLookup(context));
     } else if (builderTheme != null) {
       return builderTheme!(context, themeLookup(context));
-    } else if (builderLocalizations != null) {
-      return builderLocalizations!(context, localizationLookup(context));
+    } else if (builderLocalization != null) {
+      return builderLocalization!(context, localizationLookup(context));
     }
     throw ArgumentError(
         'builder, builderTheme or builderLocalizations should be passed');

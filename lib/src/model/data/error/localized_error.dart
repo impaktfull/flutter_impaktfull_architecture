@@ -10,10 +10,11 @@ abstract class BaseLocalizedError<Localization> extends Error
   String? getTranslatedError(Localization localization) => null;
 }
 
-class SimpleLocalizedError extends Error implements BaseLocalizedError<void> {
+class SimpleLocalizedMessageError extends Error
+    implements BaseLocalizedError<void> {
   final String message;
 
-  SimpleLocalizedError(this.message);
+  SimpleLocalizedMessageError(this.message);
   @override
   String get errorLocalizationKey => message;
 
@@ -22,4 +23,14 @@ class SimpleLocalizedError extends Error implements BaseLocalizedError<void> {
 
   @override
   String toString() => 'SimpleLocalizedError: `$message`';
+}
+
+class SimpleLocalizedError extends Error implements BaseLocalizedError<void> {
+  SimpleLocalizedError();
+
+  @override
+  String get errorLocalizationKey => '';
+
+  @override
+  String? getTranslatedError(void localization) => null;
 }

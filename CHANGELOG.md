@@ -1,3 +1,18 @@
+# 0.0.8
+
+## Breaking
+
+- `builderLocalizations` -> `builderLocalization` in ThemeLocalizer
+- SimpleLocalizedError becomes SimpelLocalizedMesasgeError
+
+## Feat
+- SimpleLocalizedError is a new error that does not require any parameters
+- DownUpPageRoute added
+- CombiningSmartInterceptor added for dio
+- ImpaktfullLogger added (possible to attach another logger to the global ImpaktfullLogger, so it can be used as a facade for multiple loggers)
+- BaseProviderWidget possible to use `value` instead of `create` for singleton dependencies
+- 
+
 # 0.0.7
 
 ## Fix
