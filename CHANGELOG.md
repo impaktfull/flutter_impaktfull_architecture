@@ -1,3 +1,9 @@
+# 0.0.9
+
+## Update
+
+- Updated readme with disclaimer everything under <1.0.0 should not be used unless you want to test it
+
 # 0.0.8
 
 ## Breaking
