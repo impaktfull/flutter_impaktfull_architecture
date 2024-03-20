@@ -13,7 +13,7 @@ dependencies:
   dio: ^5.4.1
   gap: ^3.0.1
   get_it: ^7.6.7
-  impaktfull_ui: ^0.0.31
+  impaktfull_ui: ">0.0.31 <1.0.0"
   injectable: ^2.3.2
   intl: ^0.18.1
   flutter_secure_storage: ^9.0.0
