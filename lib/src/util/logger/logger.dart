@@ -18,7 +18,10 @@ class ImpaktfullLogger {
 
   static void _log(ImpaktfullLogType type, Object message) {
     final stringMessage = message.toString();
-    if (_logLevel.priority <= type.priority) return;
+    for (final listener in _listeners) {
+      listener.log(type, stringMessage);
+    }
+    if (type.priority > _logLevel.priority) return;
     if (kDebugMode) {
       print(stringMessage);
     }

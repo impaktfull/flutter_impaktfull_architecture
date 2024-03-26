@@ -1,3 +1,10 @@
+# 0.0.11
+
+## Fix
+
+- ImpaktfullLogger fix logging priority bug 
+- ImpaktfullLogger fix log to listeners (always and let the listener decide if it should log or not)
+
 # 0.0.10
 
 ## Update
