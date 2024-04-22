@@ -2,6 +2,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:impaktfull_architecture/src/repo/version_check/version_check_repository.dart';
+import 'package:impaktfull_architecture/src/util/connectivity/connectivity.dart';
 import 'package:impaktfull_architecture/src/util/storage/key_value/key_value_store.dart';
 import 'package:impaktfull_architecture/src/util/storage/secure/secure_store.dart';
 import 'package:impaktfull_architecture/src/util/storage/shared_prefs/shared_prefs_store.dart';
@@ -21,8 +23,10 @@ Future<void> _register3rdPartyStorage(GetItHelper gh,
     preResolve: true,
   );
   gh.lazySingleton<Connectivity>(() => Connectivity());
+  gh.lazySingleton<ConnectivityController>(() => ConnectivityController(gh()));
   gh.lazySingleton<DeviceInfoPlugin>(() => DeviceInfoPlugin());
   gh.lazySingleton<FlutterSecureStorage>(() => const FlutterSecureStorage());
+  gh.lazySingleton<VersionCheckRepository>(() => VersionCheckRepository(gh()));
 }
 
 void _registerStores(GetItHelper gh, {required bool isWeb}) {

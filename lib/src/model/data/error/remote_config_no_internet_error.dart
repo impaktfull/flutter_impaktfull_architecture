@@ -1,0 +1,1 @@
+class RemoteConfigNoInternetError extends Error {}

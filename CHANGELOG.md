@@ -1,3 +1,14 @@
+# 0.1.0
+
+## Feat
+
+- VersionCheckRepository & service & models 
+- RemoteConfigRepository & models
+
+## Fix
+
+- Dependency issues where certain dependencies were not registred in getIt
+
 # 0.0.11
 
 ## Fix
