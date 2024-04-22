@@ -1,6 +1,6 @@
 name: impaktfull_architecture
 description: Shared architecture for Impaktfull Flutter projects.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/Impaktfull/flutter_architecture
 environment:
   sdk: ">=3.2.0 <4.0.0"
