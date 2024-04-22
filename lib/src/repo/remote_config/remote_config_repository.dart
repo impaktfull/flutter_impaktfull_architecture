@@ -30,19 +30,28 @@ abstract class RemoteConfigRepository<T extends ImpaktfullRemoteConfigData> {
       final json = jsonEncode(toJson(remoteConfigData));
       ImpaktfullLogger.debug('REMOTE_CONFIG: Saving remote config data: $json');
       await _sharedPrefsStore.saveString(key: storageKey, value: json);
+      ImpaktfullRemoteConfigData.configure(remoteConfigData);
       return remoteConfigData;
     } catch (e) {
       ImpaktfullLogger.debug(
           'REMOTE_CONFIG: Failed to fetch data from remote config, try cache');
       try {
         final json = await _sharedPrefsStore.getString(key: storageKey);
-        if (json == null) return getDefault();
+        if (json == null) {
+          final remoteConfigData = await getDefault();
+          ImpaktfullRemoteConfigData.configure(remoteConfigData);
+          return remoteConfigData;
+        }
         final jsonData = jsonDecode(json) as Map<String, dynamic>;
-        return fromJson(jsonData);
+        final remoteConfigData = fromJson(jsonData);
+        ImpaktfullRemoteConfigData.configure(remoteConfigData);
+        return remoteConfigData;
       } catch (e) {
         ImpaktfullLogger.debug(
             'REMOTE_CONFIG: Failed to fetch data from cache, use default');
-        return getDefault();
+        final remoteConfigData = await getDefault();
+        ImpaktfullRemoteConfigData.configure(remoteConfigData);
+        return remoteConfigData;
       }
     }
   }

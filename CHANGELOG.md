@@ -1,3 +1,9 @@
+# 0.1.1
+
+## Fix
+
+- RemoteConfigRepository bug with setting the actual remote config
+
 # 0.1.0
 
 ## Feat
