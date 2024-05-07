@@ -5,20 +5,20 @@ import 'package:impaktfull_architecture/src/model/data/version_check/version_req
 import 'package:impaktfull_architecture/src/service/version_check/version_check_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-abstract class VersionCheckRepository {
-  factory VersionCheckRepository(
-    VersionCheckService versionCheckService,
-  ) = _VersionCheckRepository;
+abstract class ImpaktfullVersionCheckRepository {
+  factory ImpaktfullVersionCheckRepository(
+    ImpaktfullVersionCheckService versionCheckService,
+  ) = _ImpaktfullVersionCheckRepository;
 
   Future<String> getAppVersion();
 
-  Future<VersionCheckResult?> checkVersionCheck();
+  Future<ImpaktfullVersionCheckResult?> checkVersionCheck();
 }
 
-class _VersionCheckRepository implements VersionCheckRepository {
-  final VersionCheckService _versionCheckService;
+class _ImpaktfullVersionCheckRepository implements ImpaktfullVersionCheckRepository {
+  final ImpaktfullVersionCheckService _versionCheckService;
 
-  _VersionCheckRepository(
+  _ImpaktfullVersionCheckRepository(
     this._versionCheckService,
   );
 
@@ -29,10 +29,9 @@ class _VersionCheckRepository implements VersionCheckRepository {
   }
 
   @override
-  Future<VersionCheckResult?> checkVersionCheck() async {
+  Future<ImpaktfullVersionCheckResult?> checkVersionCheck() async {
     final packageInfo = await PackageInfo.fromPlatform();
-    final versionRequirement =
-        await _versionCheckService.getVersionRequirements();
+    final versionRequirement = await _versionCheckService.getVersionRequirements();
     if (versionRequirement == null) return null;
     final currentBuildNumber = int.tryParse(packageInfo.buildNumber) ?? 0;
     final latest = versionRequirement.latest;
@@ -44,15 +43,14 @@ class _VersionCheckRepository implements VersionCheckRepository {
     return _getVersionCheckResult(latest, currentBuildNumber, false);
   }
 
-  VersionCheckResult? _getVersionCheckResult(
-    VersionRequirement versionRequirement,
+  ImpaktfullVersionCheckResult? _getVersionCheckResult(
+    ImpaktfullVersionRequirement versionRequirement,
     int currentBuildNumber,
     bool isForcedUpdate,
   ) {
     if (currentBuildNumber >= versionRequirement.buildNumber) return null;
-    final versionNumber = versionRequirement.versionNumber ??
-        versionRequirement.buildNumber.toString();
-    return VersionCheckResult(
+    final versionNumber = versionRequirement.versionNumber ?? versionRequirement.buildNumber.toString();
+    return ImpaktfullVersionCheckResult(
       updateUrl: versionRequirement.updateUrl,
       isForceUpdate: isForcedUpdate,
       versionNumber: versionNumber,

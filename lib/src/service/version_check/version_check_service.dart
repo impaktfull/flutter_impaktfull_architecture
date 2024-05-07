@@ -1,10 +1,10 @@
 import 'package:impaktfull_architecture/src/model/data/version_check/version_check_result.dart';
 import 'package:impaktfull_architecture/src/model/data/version_check/version_requirements.dart';
 
-abstract class VersionCheckService {
-  Future<VersionRequirements?> getVersionRequirements();
+abstract class ImpaktfullVersionCheckService {
+  Future<ImpaktfullVersionRequirements?> getVersionRequirements();
 
-  Future<void> install(VersionCheckResult result);
+  Future<void> install(ImpaktfullVersionCheckResult result);
 
   void openStore();
 }

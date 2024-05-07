@@ -1,19 +1,19 @@
-class VersionRequirements {
-  final VersionRequirement latest;
-  final VersionRequirement? min;
+class ImpaktfullVersionRequirements {
+  final ImpaktfullVersionRequirement latest;
+  final ImpaktfullVersionRequirement? min;
 
-  VersionRequirements({
+  ImpaktfullVersionRequirements({
     required this.latest,
     this.min,
   });
 }
 
-class VersionRequirement {
+class ImpaktfullVersionRequirement {
   final int buildNumber;
   final String? updateUrl;
   final String? versionNumber;
 
-  VersionRequirement({
+  ImpaktfullVersionRequirement({
     required this.buildNumber,
     this.updateUrl,
     this.versionNumber,

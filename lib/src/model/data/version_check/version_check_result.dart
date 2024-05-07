@@ -1,9 +1,9 @@
-class VersionCheckResult {
+class ImpaktfullVersionCheckResult {
   final String? updateUrl;
   final bool isForceUpdate;
   final String versionNumber;
 
-  VersionCheckResult({
+  ImpaktfullVersionCheckResult({
     required this.updateUrl,
     required this.isForceUpdate,
     required this.versionNumber,

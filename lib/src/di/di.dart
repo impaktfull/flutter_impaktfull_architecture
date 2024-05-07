@@ -10,14 +10,18 @@ import 'package:impaktfull_architecture/src/util/storage/shared_prefs/shared_pre
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<void> configureImpaktfullArchitecture(GetItHelper gh,
-    {bool isWeb = kIsWeb}) async {
+Future<void> configureImpaktfullArchitecture(
+  GetItHelper gh, {
+  bool isWeb = kIsWeb,
+}) async {
   await _register3rdPartyStorage(gh, isWeb: isWeb);
   _registerStores(gh, isWeb: isWeb);
 }
 
-Future<void> _register3rdPartyStorage(GetItHelper gh,
-    {required bool isWeb}) async {
+Future<void> _register3rdPartyStorage(
+  GetItHelper gh, {
+  required bool isWeb,
+}) async {
   await gh.lazySingletonAsync<SharedPreferences>(
     () => SharedPreferences.getInstance(),
     preResolve: true,
@@ -26,10 +30,13 @@ Future<void> _register3rdPartyStorage(GetItHelper gh,
   gh.lazySingleton<ConnectivityController>(() => ConnectivityController(gh()));
   gh.lazySingleton<DeviceInfoPlugin>(() => DeviceInfoPlugin());
   gh.lazySingleton<FlutterSecureStorage>(() => const FlutterSecureStorage());
-  gh.lazySingleton<VersionCheckRepository>(() => VersionCheckRepository(gh()));
+  gh.lazySingleton<ImpaktfullVersionCheckRepository>(() => ImpaktfullVersionCheckRepository(gh()));
 }
 
-void _registerStores(GetItHelper gh, {required bool isWeb}) {
+void _registerStores(
+  GetItHelper gh, {
+  required bool isWeb,
+}) {
   gh.lazySingleton<SharedPrefsStore>(() => SharedPrefsStore(gh()));
   gh.lazySingleton<SecureStore>(() => SecureStore(gh()));
   gh.lazySingleton<KeyValueStore>(() {

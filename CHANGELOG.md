@@ -1,3 +1,14 @@
+# 0.2.0
+
+## Breaking
+
+- Renamed VersionCheckResult to ImpaktfullVersionCheckResult
+- Renamed VersionRequirements to ImpaktfullVersionRequirements
+- Renamed VersionCheckService to ImpaktfullVersionCheckService
+- Renamed NoopVersionCheckService to ImpaktfullNoopVersionCheckService
+- Renamed VersionCheckRepository to ImpaktfullVersionCheckRepository
+- Renamed RemoteConfigRepository to ImpaktfullRemoteConfigRepository
+
 # 0.1.1
 
 ## Fix

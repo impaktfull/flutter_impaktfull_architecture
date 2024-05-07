@@ -6,12 +6,12 @@ import 'package:impaktfull_architecture/src/util/connectivity/connectivity.dart'
 import 'package:impaktfull_architecture/src/util/logger/logger.dart';
 import 'package:impaktfull_architecture/src/util/storage/shared_prefs/shared_prefs_store.dart';
 
-abstract class RemoteConfigRepository<T extends ImpaktfullRemoteConfigData> {
+abstract class ImpaktfullRemoteConfigRepository<T extends ImpaktfullRemoteConfigData> {
   final SharedPrefsStore _sharedPrefsStore;
   final ConnectivityController _connectivityController;
   final String storageKey;
 
-  RemoteConfigRepository(
+  ImpaktfullRemoteConfigRepository(
     this._sharedPrefsStore,
     this._connectivityController, {
     this.storageKey = 'remote_config',
