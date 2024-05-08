@@ -13,9 +13,14 @@ abstract class ImpaktfullVersionCheckRepository {
   Future<String> getAppVersion();
 
   Future<ImpaktfullVersionCheckResult?> checkVersionCheck();
+
+  Future<bool> hasRequiredUpdateAvailable();
+
+  Future<bool> hasUpdateAvailable();
 }
 
-class _ImpaktfullVersionCheckRepository implements ImpaktfullVersionCheckRepository {
+class _ImpaktfullVersionCheckRepository
+    implements ImpaktfullVersionCheckRepository {
   final ImpaktfullVersionCheckService _versionCheckService;
 
   _ImpaktfullVersionCheckRepository(
@@ -31,7 +36,8 @@ class _ImpaktfullVersionCheckRepository implements ImpaktfullVersionCheckReposit
   @override
   Future<ImpaktfullVersionCheckResult?> checkVersionCheck() async {
     final packageInfo = await PackageInfo.fromPlatform();
-    final versionRequirement = await _versionCheckService.getVersionRequirements();
+    final versionRequirement =
+        await _versionCheckService.getVersionRequirements();
     if (versionRequirement == null) return null;
     final currentBuildNumber = int.tryParse(packageInfo.buildNumber) ?? 0;
     final latest = versionRequirement.latest;
@@ -49,11 +55,24 @@ class _ImpaktfullVersionCheckRepository implements ImpaktfullVersionCheckReposit
     bool isForcedUpdate,
   ) {
     if (currentBuildNumber >= versionRequirement.buildNumber) return null;
-    final versionNumber = versionRequirement.versionNumber ?? versionRequirement.buildNumber.toString();
+    final versionNumber = versionRequirement.versionNumber ??
+        versionRequirement.buildNumber.toString();
     return ImpaktfullVersionCheckResult(
       updateUrl: versionRequirement.updateUrl,
       isForceUpdate: isForcedUpdate,
       versionNumber: versionNumber,
     );
+  }
+
+  @override
+  Future<bool> hasRequiredUpdateAvailable() async {
+    final versionCheckResult = await checkVersionCheck();
+    return versionCheckResult?.isForceUpdate ?? false;
+  }
+
+  @override
+  Future<bool> hasUpdateAvailable() async {
+    final versionCheckResult = await checkVersionCheck();
+    return versionCheckResult != null;
   }
 }

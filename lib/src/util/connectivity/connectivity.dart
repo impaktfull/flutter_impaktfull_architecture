@@ -4,17 +4,18 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 class ConnectivityController {
   final Connectivity _connectivity;
-  ConnectivityResult? _connectionResult;
+  List<ConnectivityResult> _connectionResult = [];
 
-  bool get isConnected => _connectionResult != ConnectivityResult.none;
+  bool get isConnected =>
+      _connectionResult.contains(ConnectivityResult.mobile) ||
+      _connectionResult.contains(ConnectivityResult.wifi);
 
-  ConnectivityResult get currentConnection =>
-      _connectionResult ?? ConnectivityResult.none;
+  List<ConnectivityResult> get currentConnection => _connectionResult;
 
   ConnectivityController(this._connectivity);
 
   Future<void> initConnection({Duration? noConnectionRetryTimer}) async {
-    _connectivity.onConnectivityChanged.listen(_updateConnectivity);
+    _connectivity.onConnectivityChanged.listen((result) => _updateConnectivity);
     await _checkConnectivity();
     if (noConnectionRetryTimer != null && !isConnected) {
       await Future.delayed(noConnectionRetryTimer);
@@ -27,7 +28,7 @@ class ConnectivityController {
     _updateConnectivity(connection);
   }
 
-  void _updateConnectivity(ConnectivityResult result) {
+  void _updateConnectivity(List<ConnectivityResult> result) {
     _connectionResult = result;
   }
 }

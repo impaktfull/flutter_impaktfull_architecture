@@ -30,7 +30,8 @@ Future<void> _register3rdPartyStorage(
   gh.lazySingleton<ConnectivityController>(() => ConnectivityController(gh()));
   gh.lazySingleton<DeviceInfoPlugin>(() => DeviceInfoPlugin());
   gh.lazySingleton<FlutterSecureStorage>(() => const FlutterSecureStorage());
-  gh.lazySingleton<ImpaktfullVersionCheckRepository>(() => ImpaktfullVersionCheckRepository(gh()));
+  gh.lazySingleton<ImpaktfullVersionCheckRepository>(
+      () => ImpaktfullVersionCheckRepository(gh()));
 }
 
 void _registerStores(

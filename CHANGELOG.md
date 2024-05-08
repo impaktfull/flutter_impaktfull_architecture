@@ -8,6 +8,14 @@
 - Renamed NoopVersionCheckService to ImpaktfullNoopVersionCheckService
 - Renamed VersionCheckRepository to ImpaktfullVersionCheckRepository
 - Renamed RemoteConfigRepository to ImpaktfullRemoteConfigRepository
+- connectivity_plus fixed breaking changes `ConnectivityResult` -> `List<ConnectivityResult>`
+
+## Update 
+- Version bump all package to support iOS Privacy Manifest.
+
+## Feat
+- ImpaktfullVersionCheckRepo now has a `hasRequiredUpdateAvailable` method
+- ImpaktfullVersionCheckRepo now has a `hasUpdateAvailable` method
 
 # 0.1.1
 
