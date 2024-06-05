@@ -1,3 +1,10 @@
+# 0.3.0
+
+## Breaking
+
+- Support for Flutter 3.22.x
+- intl updated to 0.19.0
+
 # 0.2.0
 
 ## Breaking
