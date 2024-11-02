@@ -1,3 +1,9 @@
+# 0.3.1
+
+## Fix
+
+- impaktfull dependencies updated
+
 # 0.3.0
 
 ## Breaking
