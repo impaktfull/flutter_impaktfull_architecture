@@ -2,9 +2,11 @@ name: impaktfull_architecture
 description: Shared architecture for Impaktfull Flutter projects.
 version: 0.3.1
 homepage: https://github.com/Impaktfull/flutter_architecture
+
 environment:
   sdk: ">=3.3.0 <4.0.0"
   flutter: ">=1.17.0"
+
 dependencies:
   connectivity_plus: ^6.0.3
   device_info_plus: ^10.1.0
@@ -28,8 +30,10 @@ dependencies:
   synchronized: ^3.1.0+1
   tuple: ^2.0.2
   url_launcher: ^6.2.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-flutter: null
+
+flutter:

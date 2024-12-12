@@ -1,3 +1,15 @@
+# 0.4.0
+
+## Feat
+
+- Added a SimpleProviderWidget that is a simplified version of the ProviderWidget
+
+# 0.3.2
+
+## Feat
+
+- exposed intl package
+
 # 0.3.1
 
 ## Fix
@@ -23,10 +35,12 @@
 - Renamed RemoteConfigRepository to ImpaktfullRemoteConfigRepository
 - connectivity_plus fixed breaking changes `ConnectivityResult` -> `List<ConnectivityResult>`
 
-## Update 
+## Update
+
 - Version bump all package to support iOS Privacy Manifest.
 
 ## Feat
+
 - ImpaktfullVersionCheckRepo now has a `hasRequiredUpdateAvailable` method
 - ImpaktfullVersionCheckRepo now has a `hasUpdateAvailable` method
 
@@ -40,7 +54,7 @@
 
 ## Feat
 
-- VersionCheckRepository & service & models 
+- VersionCheckRepository & service & models
 - RemoteConfigRepository & models
 
 ## Fix
@@ -51,7 +65,7 @@
 
 ## Fix
 
-- ImpaktfullLogger fix logging priority bug 
+- ImpaktfullLogger fix logging priority bug
 - ImpaktfullLogger fix log to listeners (always and let the listener decide if it should log or not)
 
 # 0.0.10
@@ -74,12 +88,13 @@
 - SimpleLocalizedError becomes SimpelLocalizedMesasgeError
 
 ## Feat
+
 - SimpleLocalizedError is a new error that does not require any parameters
 - DownUpPageRoute added
 - CombiningSmartInterceptor added for dio
 - ImpaktfullLogger added (possible to attach another logger to the global ImpaktfullLogger, so it can be used as a facade for multiple loggers)
 - BaseProviderWidget possible to use `value` instead of `create` for singleton dependencies
-- 
+-
 
 # 0.0.7
 

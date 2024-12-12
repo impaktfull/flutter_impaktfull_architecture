@@ -36,6 +36,7 @@ export 'package:gap/gap.dart';
 export 'package:get_it/get_it.dart';
 export 'package:impaktfull_ui/impaktfull_ui.dart';
 export 'package:injectable/injectable.dart' hide test;
+export 'package:intl/intl.dart' hide TextDirection;
 export 'package:flutter_secure_storage/flutter_secure_storage.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:package_info_plus/package_info_plus.dart';
