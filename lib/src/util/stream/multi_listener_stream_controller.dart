@@ -1,50 +1,47 @@
 import 'dart:async';
 
-/// A simplified BehaviorSubject implementation
-class MultiListenerStreamController<T> {
-  late T _value;
-  bool _hasValue = false;
+class MultiListenerStreamController<T extends Object?> {
+  T? _value;
 
   final _controller = StreamController<T>.broadcast();
 
   MultiListenerStreamController([T? initialValue]) {
-    if (initialValue != null) {
-      _value = initialValue;
-      _hasValue = true;
-    }
+    _value = initialValue;
   }
 
-  /// Get the current value
   T get value {
-    if (!_hasValue) {
-      throw StateError('No value has been emitted yet.');
+    if (hasValue) {
+      return _value as T;
     }
-    return _value;
+    throw StateError('No value has been emitted yet.');
   }
 
-  /// Emit a new value
+  T? get valueOrNull => _value;
+
+  bool get hasValue => _value != null;
+
   void add(T newValue) {
     _value = newValue;
-    _hasValue = true;
     _controller.add(newValue);
   }
 
-  /// Listen to the stream
-  Stream<T> get stream {
-    return _controller.stream.transform(
-      StreamTransformer.fromHandlers(
-        handleData: (data, sink) {
-          if (_hasValue) {
-            sink.add(_value); // Emit the current value to new listeners
-          }
-        },
-      ),
-    );
-  }
+  Stream<T> get stream => _controller.stream.transform(
+        StreamTransformer.fromHandlers(
+          handleData: (data, sink) {
+            if (hasValue) {
+              sink.add(_value as T);
+            }
+          },
+        ),
+      );
 
-  /// Close the stream
+  Stream<T?> get streamOrNull => _controller.stream.transform(
+        StreamTransformer.fromHandlers(
+          handleData: (data, sink) => sink.add(_value),
+        ),
+      );
+
   Future<void> close() => _controller.close();
 
-  /// Check if the stream is closed
   bool get isClosed => _controller.isClosed;
 }

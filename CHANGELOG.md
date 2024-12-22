@@ -1,3 +1,9 @@
+# 0.5.1
+
+## Fix
+
+- Made the MultiListenerStreamController more versatile by adding a streamOrNull, value, valueOrNull and hasValue property
+
 # 0.5.0
 
 ## Feat
