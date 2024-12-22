@@ -1,3 +1,9 @@
+# 0.5.0
+
+## Feat
+
+- Added a MultiListenerStreamController that is a simplified version of the BehaviorSubject from RxDart
+
 # 0.4.0
 
 ## Feat

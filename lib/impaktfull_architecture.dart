@@ -23,6 +23,7 @@ export 'src/util/number_formatter/number_formatter_util.dart';
 export 'src/util/storage/key_value/key_value_store.dart';
 export 'src/util/storage/secure/secure_store.dart';
 export 'src/util/storage/shared_prefs/shared_prefs_store.dart';
+export 'src/util/stream/multi_listener_stream_controller.dart';
 export 'src/widget/lifecycle/lifecycle_widget.dart';
 export 'src/widget/mixin/after_layout.dart';
 export 'src/widget/provider/provider_widget.dart';
