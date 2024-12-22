@@ -2,6 +2,12 @@
 
 ## Fix
 
+- Security update, requires shared_preferences_android to be 2.3.4.
+
+# 0.5.1
+
+## Fix
+
 - Made the MultiListenerStreamController more versatile by adding a streamOrNull, value, valueOrNull and hasValue property
 
 # 0.5.0
