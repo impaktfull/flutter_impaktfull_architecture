@@ -1,3 +1,16 @@
+# 0.6.0
+
+## Feat
+
+- Added url_strategy.dart for web support
+- Added flutter_web_plugins as a dependency
+
+# 0.5.3
+
+## Fix
+
+- Security update, requires shared_preferences_android to be 2.3.4.
+
 # 0.5.2
 
 ## Fix
