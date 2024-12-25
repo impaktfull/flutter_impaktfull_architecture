@@ -1,6 +1,7 @@
 library impaktfull_architecture;
 
 export 'src/di/di.dart';
+export 'src/extension/future_extension.dart';
 export 'src/extension/iterable_extension.dart';
 export 'src/extension/list_extension.dart';
 export 'src/model/data/error/localized_error.dart';
