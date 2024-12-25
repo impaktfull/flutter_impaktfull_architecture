@@ -1,3 +1,9 @@
+# 0.7.0
+
+## Feat
+
+- Added takeAtLeast extension for Future
+
 # 0.6.0
 
 ## Feat
