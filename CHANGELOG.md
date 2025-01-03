@@ -1,3 +1,9 @@
+# 0.8.1
+
+## Fix
+
+- License update to 2025
+
 # 0.8.0
 
 ## Feat
