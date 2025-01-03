@@ -17,6 +17,10 @@ abstract class ImpaktfullVersionCheckRepository {
   Future<bool> hasRequiredUpdateAvailable();
 
   Future<bool> hasUpdateAvailable();
+
+  Future<void> install(ImpaktfullVersionCheckResult result);
+
+  void openStore();
 }
 
 class _ImpaktfullVersionCheckRepository
@@ -75,4 +79,11 @@ class _ImpaktfullVersionCheckRepository
     final versionCheckResult = await checkVersionCheck();
     return versionCheckResult != null;
   }
+
+  @override
+  Future<void> install(ImpaktfullVersionCheckResult result) async =>
+      await _versionCheckService.install(result);
+
+  @override
+  void openStore() => _versionCheckService.openStore();
 }

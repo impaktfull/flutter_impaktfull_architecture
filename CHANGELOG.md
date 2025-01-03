@@ -1,3 +1,9 @@
+# 0.8.0
+
+## Feat
+
+- Added better support for installing an update with the ImpaktfullVersionCheckRepository
+
 # 0.7.1
 
 ## Fix
