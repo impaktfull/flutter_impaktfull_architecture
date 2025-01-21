@@ -1,3 +1,9 @@
+# 0.9.0
+
+## Feat
+
+- Added ColorExtension to have a non deprecated withOpacityPercentage to replace withOpacity
+
 # 0.8.1
 
 ## Fix
