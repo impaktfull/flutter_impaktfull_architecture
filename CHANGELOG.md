@@ -1,3 +1,9 @@
+# 0.10.0
+
+## Feat
+
+- Added AppSettings to open the app settings
+
 # 0.9.0
 
 ## Feat
