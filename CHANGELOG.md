@@ -1,3 +1,9 @@
+# 0.11.0
+
+## Feat
+
+- DateFormatterUtil now supports locales
+
 # 0.10.0
 
 ## Feat
