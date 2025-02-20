@@ -8,12 +8,10 @@ class MultiInstanceCrashReportingUtil extends ImpaktfullCrashReportingUtil {
   );
 
   @override
-  Future<void> init({bool enabled = false}) async {
+  Future<void> init() async {
     await Future.wait(
       crashReportingUtils.map(
-        (util) => util.init(
-          enabled: enabled,
-        ),
+        (util) => util.init(),
       ),
     );
   }

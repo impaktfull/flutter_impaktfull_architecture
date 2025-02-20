@@ -8,11 +8,9 @@ class MultiInstanceAnalyticsUtil extends ImpaktfullAnalyticsUtil {
   );
 
   @override
-  Future<void> init({bool enabled = false}) async {
+  Future<void> init() async {
     await Future.wait(analyticsUtils.map(
-      (util) => util.init(
-        enabled: enabled,
-      ),
+      (util) => util.init(),
     ));
   }
 

@@ -1,5 +1,5 @@
 abstract class ImpaktfullCrashReportingUtil {
-  Future<void> init({bool enabled = false});
+  Future<void> init();
 
   Future<void> setEnabled(bool enabled);
 

@@ -1,7 +1,5 @@
 abstract class ImpaktfullAnalyticsUtil {
-  Future<void> init({
-    bool enabled = false,
-  });
+  Future<void> init();
 
   Future<void> setEnabled(bool enabled);
 
