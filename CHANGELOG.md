@@ -1,3 +1,10 @@
+# 0.12.0
+
+## Feat
+
+- Added ImpaktfullAnalyticsUtil and ImpaktfullCrashReportingUtil
+- Added MultiInstanceAnalyticsUtil and MultiInstanceCrashReportingUtil
+
 # 0.11.0
 
 ## Feat
