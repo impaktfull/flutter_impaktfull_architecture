@@ -2,6 +2,12 @@
 
 ## BREAKING
 
+- Simplified ImpaktfullAnalyticsUtil and ImpaktfullCrashReportingUtil
+
+# 0.14.0
+
+## BREAKING
+
 - Remove `enabled` from the init function of ImpaktfullAnalyticsUtil and ImpaktfullCrashReportingUtil
 
 # 0.13.0

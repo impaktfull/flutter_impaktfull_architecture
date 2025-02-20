@@ -5,7 +5,10 @@ abstract class ImpaktfullCrashReportingUtil {
 
   void setUserId(String userId);
 
-  void setUserProperty(String property, String value);
+  void setUserProperty({
+    required String property,
+    required String value,
+  });
 
   void log(String message, {Map<String, dynamic>? data});
 
@@ -15,5 +18,8 @@ abstract class ImpaktfullCrashReportingUtil {
     String? message,
   });
 
-  void logUnhandledError(Object error, StackTrace stackTrace);
+  void logUnhandledError({
+    required Object error,
+    required StackTrace stackTrace,
+  });
 }

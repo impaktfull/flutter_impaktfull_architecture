@@ -29,9 +29,15 @@ class MultiInstanceAnalyticsUtil extends ImpaktfullAnalyticsUtil {
   }
 
   @override
-  void setUserProperty(String property, String value) {
+  void setUserProperty({
+    required String property,
+    required String value,
+  }) {
     for (var util in analyticsUtils) {
-      util.setUserProperty(property, value);
+      util.setUserProperty(
+        property: property,
+        value: value,
+      );
     }
   }
 

@@ -33,9 +33,15 @@ class MultiInstanceCrashReportingUtil extends ImpaktfullCrashReportingUtil {
   }
 
   @override
-  void setUserProperty(String property, String value) {
+  void setUserProperty({
+    required String property,
+    required String value,
+  }) {
     for (final util in crashReportingUtils) {
-      util.setUserProperty(property, value);
+      util.setUserProperty(
+        property: property,
+        value: value,
+      );
     }
   }
 
@@ -58,9 +64,15 @@ class MultiInstanceCrashReportingUtil extends ImpaktfullCrashReportingUtil {
   }
 
   @override
-  void logUnhandledError(Object error, StackTrace stackTrace) {
+  void logUnhandledError({
+    required Object error,
+    required StackTrace stackTrace,
+  }) {
     for (final util in crashReportingUtils) {
-      util.logUnhandledError(error, stackTrace);
+      util.logUnhandledError(
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
   }
 }
