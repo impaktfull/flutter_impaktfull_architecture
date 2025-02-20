@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:impaktfull_architecture/src/util/analytics/analytics_util.dart';
 
 class MultiInstanceAnalyticsUtil extends ImpaktfullAnalyticsUtil {
@@ -19,6 +21,14 @@ class MultiInstanceAnalyticsUtil extends ImpaktfullAnalyticsUtil {
     await Future.wait(analyticsUtils.map(
       (util) => util.setEnabled(enabled),
     ));
+  }
+
+  @override
+  Future<bool> isEnabled() async {
+    final result = await Future.wait(analyticsUtils.map(
+      (util) => util.isEnabled(),
+    ));
+    return result.every((element) => element);
   }
 
   @override

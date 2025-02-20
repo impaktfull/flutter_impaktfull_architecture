@@ -1,3 +1,9 @@
+# 0.16.0
+
+## BREAKING
+
+- Added `isEnabled` to ImpaktfullAnalyticsUtil and ImpaktfullCrashReportingUtil
+
 # 0.15.0 - 0.15.1
 
 ## BREAKING

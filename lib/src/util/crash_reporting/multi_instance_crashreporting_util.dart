@@ -26,6 +26,14 @@ class MultiInstanceCrashReportingUtil extends ImpaktfullCrashReportingUtil {
   }
 
   @override
+  Future<bool> isEnabled() async {
+    final result = await Future.wait(crashReportingUtils.map(
+      (util) => util.isEnabled(),
+    ));
+    return result.every((element) => element);
+  }
+
+  @override
   void setUserId(String userId) {
     for (final util in crashReportingUtils) {
       util.setUserId(userId);

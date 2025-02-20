@@ -3,6 +3,8 @@ abstract class ImpaktfullCrashReportingUtil {
 
   Future<void> setEnabled(bool enabled);
 
+  Future<bool> isEnabled();
+
   void setUserId(String userId);
 
   void setUserProperty({

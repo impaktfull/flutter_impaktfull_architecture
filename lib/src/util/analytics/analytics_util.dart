@@ -1,7 +1,11 @@
+import 'dart:async';
+
 abstract class ImpaktfullAnalyticsUtil {
   Future<void> init();
 
   Future<void> setEnabled(bool enabled);
+
+  Future<bool> isEnabled();
 
   void setUserId(String userId);
 
