@@ -58,4 +58,11 @@ class MultiInstanceCrashReportingUtil extends ImpaktfullCrashReportingUtil {
       util.logError(error: error, stackTrace: stackTrace, message: message);
     }
   }
+
+  @override
+  void logUnhandledError(Object error, StackTrace stackTrace) {
+    for (final util in crashReportingUtils) {
+      util.logUnhandledError(error, stackTrace);
+    }
+  }
 }

@@ -7,11 +7,13 @@ abstract class ImpaktfullCrashReportingUtil {
 
   void setUserProperty(String property, String value);
 
+  void log(String message, {Map<String, dynamic>? data});
+
   void logError({
     required Object error,
     required StackTrace stackTrace,
     String? message,
   });
 
-  void log(String message, {Map<String, dynamic>? data});
+  void logUnhandledError(Object error, StackTrace stackTrace);
 }

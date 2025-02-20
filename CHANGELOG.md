@@ -1,3 +1,9 @@
+# 0.13.0
+
+## BREAKING
+
+- Added logUnhandledError to ImpaktfullCrashReportingUtil
+
 # 0.12.0
 
 ## Feat
