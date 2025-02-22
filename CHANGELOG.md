@@ -1,3 +1,9 @@
+# 0.17.0
+
+## Feat
+
+- Added `PlatformUtil` to get the current platform
+
 # 0.16.0
 
 ## BREAKING

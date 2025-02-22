@@ -19,6 +19,7 @@ export 'src/service/version_check/version_check_service.dart';
 export 'src/service/version_check/noop_version_check_service.dart';
 export 'src/util/analytics/analytics_util.dart';
 export 'src/util/app_settings/app_settings.dart';
+export 'src/util/platform/platform_util.dart';
 export 'src/util/connectivity/connectivity.dart';
 export 'src/util/crash_reporting/crash_reporting_util.dart';
 export 'src/util/date_formatter/date_formatter_util.dart';
