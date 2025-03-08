@@ -24,6 +24,7 @@ export 'src/util/connectivity/connectivity.dart';
 export 'src/util/crash_reporting/crash_reporting_util.dart';
 export 'src/util/date_formatter/date_formatter_util.dart';
 export 'src/util/dio/combining_smart_interceptor.dart';
+export 'src/util/keychain_cleanup/keychain_cleanup_util.dart';
 export 'src/util/logger/logger.dart';
 export 'src/util/number_formatter/number_formatter_util.dart';
 export 'src/util/storage/key_value/key_value_store.dart';

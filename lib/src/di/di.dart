@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:impaktfull_architecture/src/repo/version_check/version_check_repository.dart';
 import 'package:impaktfull_architecture/src/util/connectivity/connectivity.dart';
-import 'package:impaktfull_architecture/src/util/keychain_cleanup_util.dart';
+import 'package:impaktfull_architecture/src/util/keychain_cleanup/keychain_cleanup_util.dart';
 import 'package:impaktfull_architecture/src/util/storage/key_value/key_value_store.dart';
 import 'package:impaktfull_architecture/src/util/storage/secure/secure_store.dart';
 import 'package:impaktfull_architecture/src/util/storage/shared_prefs/shared_prefs_store.dart';
