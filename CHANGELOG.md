@@ -1,3 +1,9 @@
+# 0.19.0
+
+## Feat
+
+- Added UserAgentUtil to get the user agent
+
 # 0.18.0 - 0.18.1
 
 ## Feat
