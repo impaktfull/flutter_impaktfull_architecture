@@ -1,3 +1,3 @@
-String? getPlatrormUserAgent() {
+String? getPlatformUserAgent() {
   return null;
 }

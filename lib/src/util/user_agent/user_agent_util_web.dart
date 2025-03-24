@@ -1,3 +1,3 @@
 import 'package:web/web.dart';
 
-String getPlatrormUserAgent() => window.navigator.userAgent;
+String getPlatformUserAgent() => window.navigator.userAgent;
