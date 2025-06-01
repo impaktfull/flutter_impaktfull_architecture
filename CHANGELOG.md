@@ -1,3 +1,9 @@
+# 0.22.1
+
+## Fix
+
+- Removed library declaration (analyzer issue)
+
 # 0.22.0
 
 ## Feat
