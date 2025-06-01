@@ -1,5 +1,3 @@
-library impaktfull_architecture;
-
 export 'src/di/di.dart';
 export 'src/extension/color_extension.dart';
 export 'src/extension/future_extension.dart';
