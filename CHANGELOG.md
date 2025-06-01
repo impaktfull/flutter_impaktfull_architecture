@@ -1,8 +1,18 @@
+# 0.22.0
+
+## Feat
+
+- Added github deploy key support in github actions
+
+## Fix
+
+- Updated dependencies
+
 # 0.21.0
 
 ## Feat
 
-- Allow snacky 0.0.1 to 1.0.0 
+- Allow snacky 0.0.1 to 1.0.0
 
 # 0.19.0 - 0.20.0 - 0.20.1
 
