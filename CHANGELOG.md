@@ -1,3 +1,9 @@
+# 0.23.1
+
+## Fix
+
+- Exported `Country` enum
+
 # 0.23.0
 
 ## Feat
