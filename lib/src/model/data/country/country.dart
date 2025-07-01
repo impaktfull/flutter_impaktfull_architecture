@@ -158,7 +158,7 @@ enum Country {
     countryCode: 'CV',
   ),
   caymanIslands(
-    phoneCode: '+ 345',
+    phoneCode: '+345',
     countryCode: 'KY',
   ),
   centralAfricanRepublic(
