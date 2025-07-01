@@ -4,6 +4,7 @@ export 'src/extension/future_extension.dart';
 export 'src/extension/iterable_extension.dart';
 export 'src/extension/list_extension.dart';
 export 'src/model/data/error/localized_error.dart';
+export 'src/model/data/country/country.dart';
 export 'src/model/data/error/network_error.dart';
 export 'src/model/data/remote_config/remote_config_data.dart';
 export 'src/model/data/version_check/version_check_result.dart';
