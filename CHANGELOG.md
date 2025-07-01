@@ -1,3 +1,10 @@
+# 0.23.0
+
+## Feat
+
+- Added `Country` enum with phone code and country code
+- Added `CountryLocalizations` to localize countries
+
 # 0.22.1
 
 ## Fix
