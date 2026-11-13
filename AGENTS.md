@@ -22,3 +22,17 @@ How a release happens:
 `release.yml` uses the `IMPAKTFULL_GITHUB_PAT` secret instead of `GITHUB_TOKEN`: a tag pushed with `GITHUB_TOKEN` does not trigger other workflows, and pub.dev only accepts publishes triggered by a tag push. The token needs Contents, Pull requests and Issues as "Read and write" on this repository.
 
 To force a specific version, set `"release-as": "x.y.z"` in `release-please-config.json` and remove it again after that release is merged.
+
+## Validation
+
+Every pull request runs `.github/workflows/validate.yml` on the latest stable Flutter. Run the same checks locally before you push:
+
+```sh
+dart format --output=none --set-exit-if-changed .
+flutter analyze .            # infos fail too
+flutter test
+flutter pub publish --dry-run
+flutter pub downgrade && flutter analyze --no-fatal-infos . && flutter test && flutter pub upgrade
+```
+
+The `lowest versions` job resolves every dependency to the oldest version `pubspec.yaml` allows: raise a lower bound when the code needs something newer. The `pana` job fails when the package loses pub.dev points on conventions, platform support or analysis.
