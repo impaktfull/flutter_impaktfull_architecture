@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// Widget that handles lifecycle changes based on the [WidgetsBindingObserver]
 /// And mapping the [AppLifecycleState] to a correct callback.

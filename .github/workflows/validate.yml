@@ -1,0 +1,118 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+# A new push to the same ref supersedes older runs instead of queueing them.
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Format, analyze and a publish dry run, on the newest versions of the
+  # dependencies that the constraints allow.
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Always the latest stable Flutter release, the same as the apps that
+      # depend on this package.
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      - name: Format
+        run: dart format --output=none --set-exit-if-changed .
+
+      # Infos fail the job too: a deprecation is fixed before it becomes an
+      # error in the next Flutter release.
+      - name: Analyze
+        run: flutter analyze .
+
+      - name: Publish dry run
+        run: flutter pub publish --dry-run
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      - name: Test
+        run: flutter test
+
+  # The lower bounds of the version ranges in pubspec.yaml are a promise to
+  # the apps: an app on the oldest allowed version of a dependency must still
+  # compile. `pub downgrade` resolves every dependency to that oldest version.
+  lowest_versions:
+    name: lowest versions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Resolve the oldest allowed versions
+        run: flutter pub downgrade
+
+      # Only errors and warnings: an older dependency may still have an API
+      # that a newer one deprecates.
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos .
+
+      - name: Test
+        run: flutter test
+
+  # pana is the tool that scores packages on pub.dev. Fails when the package
+  # loses points on its conventions, its platform support or the analysis.
+  # Documentation and up-to-date dependencies are reported but do not fail
+  # the job yet; add them to `required` once they score full.
+  pana:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install pana
+        run: dart pub global activate pana
+
+      - name: Run pana
+        run: |
+          dart pub global run pana --no-warning --json \
+            --flutter-sdk "$(dirname "$(dirname "$(which flutter)")")" . > pana.json
+
+      - name: Check the score
+        run: |
+          jq -r '"Total: \(.scores.grantedPoints) / \(.scores.maxPoints)", (.report.sections[] | "\(.id): \(.grantedPoints) / \(.maxPoints)")' pana.json
+          required="convention platform analysis"
+          failed=0
+          for id in $required; do
+            granted=$(jq --arg id "$id" '.report.sections[] | select(.id == $id) | .grantedPoints' pana.json)
+            max=$(jq --arg id "$id" '.report.sections[] | select(.id == $id) | .maxPoints' pana.json)
+            if [ "$granted" != "$max" ]; then
+              echo "::error::pana $id is $granted / $max"
+              jq -r --arg id "$id" '.report.sections[] | select(.id == $id) | .summary' pana.json
+              failed=1
+            fi
+          done
+          exit $failed
