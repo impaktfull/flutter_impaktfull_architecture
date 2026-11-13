@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:impaktfull_architecture/src/widget/theme/theme_localizer.dart';
 import 'package:provider/provider.dart';
 
